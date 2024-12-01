@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cry&Buy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="public/images/favicon_io/laughcry.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Cry&Buy</h1>
+      <p>Let your tears choose your next purchase!</p>
+    </header>
+
+    <main class="main">
+      <section id="cry-section">
+        <p id="instructions">
+          To begin, click the "Start Recording" button and cry as naturally as
+          possible. Your cry score will appear below once you stop. No judgement
+          just fun !
+        </p>
+
+        <h2>Start Crying</h2>
+        <button id="startButton">Start Recording</button>
+        <button id="stopButton" disabled>Stop Recording</button>
+        <audio id="audioPlayer" controls></audio>
+        <p id="cryScoreDisplay">Your cry score will appear here.</p>
+      </section>
+
+      <section id="recommendations" style="display: none">
+        <h2>Products Just for You</h2>
+        <ul id="product-list">
+          <li>
+            <img
+              src="public/images/soft_blanket.jpg"
+              alt="Soft Blanket"
+              style="width: 100px; height: auto"
+            />
+            <strong>Soft Blanket</strong><br />
+            Price: $25<br />
+            <em>A cozy blanket to comfort you.</em><br />
+            <button
+              class="add-to-cart"
+              data-name="Soft Blanket"
+              data-price="25"
+            >
+              Add to Cart
+            </button>
+          </li>
+          <li>
+            <img
+              src="public/images/stress_ball.jpg"
+              alt="Stress Relief Ball"
+              style="width: 100px; height: auto"
+            />
+            <strong>Stress Relief Ball</strong><br />
+            Price: $15<br />
+            <em>Squeeze away the stress.</em><br />
+            <button
+              class="add-to-cart"
+              data-name="Stress Relief Ball"
+              data-price="15"
+            >
+              Add to Cart
+            </button>
+          </li>
+          <li>
+            <img
+              src="public/images/therapy_journal.jpg"
+              alt="Therapy Journal"
+              style="width: 100px; height: auto"
+            />
+            <strong>Therapy Journal</strong><br />
+            Price: $20<br />
+            <em>A guided journal for self-reflection.</em><br />
+            <button
+              class="add-to-cart"
+              data-name="Therapy Journal"
+              data-price="20"
+            >
+              Add to Cart
+            </button>
+          </li>
+        </ul>
+      </section>
+      <hr class="page-divider" />
+
+      <div id="cart-container" class="cart-container">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+      </div>
+
+      <section class="section" id="user-details">
+        <h2>Enter Your Details</h2>
+        <form id="checkout-form">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John Doe"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="johndoe@example.com"
+            required
+          />
+
+          <label for="address">Address:</label>
+          <textarea
+            id="address"
+            name="address"
+            rows="4"
+            placeholder="123 Street Name, City, Country"
+            required
+          ></textarea>
+
+          <button type="submit">Place Order</button>
+        </form>
+      </section>
+    </main>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/recommendations.js"></script>
+  </body>
+</html>
